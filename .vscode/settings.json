@@ -1,0 +1,12 @@
+{
+    "editor.cursorSmoothCaretAnimation": true,
+    "editor.find.autoFindInSelection": "always",
+    "editor.fontSize": 16,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "diffEditor.codeLens": true,
+    "kite.enableOptionalCompletionsTriggers": true,
+    "kite.developerMode": true,
+    "kite.codefinder.enableLineDecoration": true,
+  }
