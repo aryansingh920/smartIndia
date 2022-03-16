@@ -28,15 +28,24 @@ app.use(
 
 const routes = require("./routes/routes");
 
-app.get("/", (req,res)=>{
-    res.redirect("/app/home");
+// app.use((req, res, next) => {
+//   console.log(req.protocol);
+//   console.log(req.get('host'));
+//   console.log(req.query);
+//   const url = `${req.protocol}://${req.get('host')}${req.url}/`;
+//   console.log(url);
+//   next();
+// })
+
+app.get("/", (req, res) => {
+  res.redirect("/app/home");
 });
 
 
-app.use("/app",routes)
+app.use("/app", routes)
 
 
 const port = 3000 || process.env.PORT;
-app.listen(port, async(req,res) =>{
-    console.log("server is running on port " + port);
+app.listen(port, async (req, res) => {
+  console.log("server is running on port " + port);
 });
