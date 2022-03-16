@@ -45,7 +45,7 @@ app.get("/", (req, res) => {
 app.use("/app", routes)
 
 
-const port = 3000 || process.env.PORT;
+const port = process.env.PORT || 3000;
 app.listen(port, async (req, res) => {
   console.log("server is running on port " + port);
 });
