@@ -1,0 +1,310 @@
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap');
+
+    :root {
+        --primary: #E5704B;
+        --fo-col: #333333;
+        --bg-neutral: #ffffff;
+        --bg-accent: #f6f5f7;
+        --bg-dark: #eeeeee;
+        --bg-primary: #C7522D;
+        --bg-gradient: #C7522D
+            /*linear-gradient(to right,var(--primary),var(--bg-primary)) no-repeat 0 0 / cover;  */
+    }
+
+
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: var(--bg-accent);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: -1.25rem 0 3.125rem;
+    }
+
+    h1 {
+        font-weight: bold;
+        margin: 0;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    p {
+        font-size: 0.875rem;
+        font-weight: 100;
+        line-height: 1.25rem;
+        letter-spacing: 0.5px;
+        margin: 1.25rem 0 1.875rem;
+    }
+
+    span {
+        font-size: 0.75rem;
+    }
+
+    a {
+        color: var(--fo-col);
+        font-size: 0.875rem;
+        text-decoration: none;
+        margin: 0.93rem 0;
+    }
+
+    .container {
+        background-color: var(--bg-neutral);
+        border-radius: 10px;
+        box-shadow: 0 0.875rem 1.75rem rgba(0, 0, 0, 0.25), 0 0.625rem 0.625rem rgba(0, 0, 0, 0.22);
+        position: relative;
+        overflow: hidden;
+        width: 48rem;
+        max-width: 100%;
+        min-height: 30rem;
+    }
+
+    form {
+        background: var(--bg-neutral);
+        display: flex;
+        flex-direction: column;
+        padding: 0 3.125rem;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .social-container {
+        margin: 1.25rem 0;
+    }
+
+    .social-container a {
+        border: 1px solid #ddd;
+        border-radius: 50%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 5px;
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+
+    input {
+        background: var(--bg-dark);
+        border: none;
+        padding: 0.75rem 0.975rem;
+        margin: 0.5rem 0;
+        width: 100%;
+    }
+
+    button {
+        border-radius: 1.25rem;
+        border: 1px solid var(--primary);
+        background: var(--primary);
+        color: var(--bg-neutral);
+        font-size: 0.75rem;
+        font-weight: bold;
+        padding: 0.75rem 2.8rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: transform 80ms ease-in;
+    }
+
+    button:active {
+        transform: scale(0.95);
+    }
+
+    button:focus {
+        outline: none;
+    }
+
+    button.ghost {
+        background: transparent;
+        border-color: #fff;
+    }
+
+    .form-container {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        transition: all 0.6s ease-in-out;
+    }
+
+    .sign-in-container {
+        left: 0;
+        width: 50%;
+        z-index: 2;
+    }
+
+    .sign-up-container {
+        left: 0;
+        width: 50%;
+        opacity: 0;
+        z-index: 1;
+    }
+
+    .overlay-container {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        transition: transform 0.6s ease-in-out;
+        z-index: 100;
+    }
+
+    .overlay {
+        background: var(--bg-primary);
+        background: var(--bg-gradient);
+        color: var(--bg-neutral);
+        position: relative;
+        left: -100%;
+        height: 100%;
+        width: 200%;
+        transform: translateX(0);
+        transition: transform 0.6s ease-in-out;
+    }
+
+    .overlay-panel {
+        position: absolute;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 2.5rem;
+        height: 100%;
+        width: 50%;
+        text-align: center;
+        transform: translateX(0);
+        transition: transform 0.6s ease-in-out;
+    }
+
+    .overlay-right {
+        right: 0;
+        transform: translateX(0);
+    }
+
+    .overlay-left {
+        transform: translateX(-20%);
+    }
+
+    /* Animation */
+
+    /* Move sign to the right */
+    .container.right-panel-active .sign-in-container {
+        transform: translateX(100%);
+    }
+
+    /* Move overlay to the left */
+    .container.right-panel-active .overlay-container {
+        transform: translateX(-100%);
+    }
+
+    /* bring signup over sign in */
+    .container.right-panel-active .sign-up-container {
+        transform: translateX(100%);
+        opacity: 1;
+        z-index: 10;
+        animation: show 0.6s;
+    }
+
+    @keyframes show {
+
+        0%,
+        49.99% {
+            opacity: 0;
+            z-index: 1;
+        }
+
+        50%,
+        100% {
+            opacity: 1;
+            z-index: 5;
+        }
+    }
+
+    /* move overlay back to the right */
+    .container.right-panel-active .overlay {
+        transform: translateX(50%);
+    }
+
+    .container.right-panel-active .overlay-left {
+        transform: translateX(0);
+    }
+
+    .container.right-panel-active .overlay-right {
+        transform: translateX(20%);
+    }
+
+    @media (max-width: 520px) {
+        .social-container a {
+            flex-direction: row;
+        }
+    }
+</style>
+
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="#">
+                <h1>Create Account</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your email for registration</span>
+                <input type="text" placeholder="Name" />
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Password" />
+                <button>Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h1>Sign in</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your account</span>
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Password" />
+                <a href="#">Forgot your password?</a>
+                <button>Sign In</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>
+                        To keep connected with us please login with your personal info
+                    </p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details and start journey with us</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="">
+        const signUpButton = document.getElementById('signUp');
+        const signInButton = document.getElementById('signIn');
+        const container = document.getElementById('container');
+
+        signUpButton.addEventListener('click', () =>
+            container.classList.add('right-panel-active'));
+
+        signInButton.addEventListener('click', () =>
+            container.classList.remove('right-panel-active'));
+    </script>
+</body>

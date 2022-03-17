@@ -4,6 +4,8 @@ const middleware = require("../middleware/middlewares");
 
 router
     .get("/home", (middleware.home_get))
+    .get("/productlist", (middleware.productlist_get))
+    .get("/dedicatedproduct",(middleware.dedicatedproduct_get))
     .get("/list", (middleware.list_get));
 
 module.exports = router;
