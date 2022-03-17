@@ -1,582 +1,1182 @@
 <%- include('./partials/header')  -%>
 <%- include('./navbar')  -%>
+
 <style>
-    @import url('https://fonts.googleapis.com/css?family=Muli:400,400i,700,700i');
-    a{
-        text-decoration: none;
-        border: none;
-    }
+    @import url("http://fonts.googleapis.com/css?family=Poppins|Roboto");
 
     body {
-        font-family: 'Muli', sans-serif;
-
-    }
-
-    .shell {
-        padding: 80px 0;
-    }
-
-    .wsk-cp-product {
-        background: #fff;
-        padding: 15px;
-        border-radius: 6px;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-        position: relative;
-        margin: 20px auto;
-    }
-
-    .wsk-cp-img {
-        position: absolute;
-        top: 5px;
-        left: 50%;
-        transform: translate(-50%);
-        -webkit-transform: translate(-50%);
-        -ms-transform: translate(-50%);
-        -moz-transform: translate(-50%);
-        -o-transform: translate(-50%);
-        -khtml-transform: translate(-50%);
-        width: 100%;
-        padding: 15px;
-        transition: all 0.2s ease-in-out;
-    }
-
-    .wsk-cp-img img {
-        width: 100%;
-        transition: all 0.2s ease-in-out;
-        border-radius: 6px;
-    }
-
-    .wsk-cp-product:hover .wsk-cp-img {
-        top: -40px;
-    }
-
-    .wsk-cp-product:hover .wsk-cp-img img {
-        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
-    }
-
-    .wsk-cp-text {
-        padding-top: 150%;
-    }
-
-    .wsk-cp-text .category {
-        text-align: center;
-        font-size: 12px;
-        font-weight: bold;
-        padding: 5px;
-        margin-bottom: 45px;
-        position: relative;
-        transition: all 0.2s ease-in-out;
-    }
-
-    .wsk-cp-text .category>* {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        -webkit-transform: translate(-50%, -50%);
-        -moz-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        -o-transform: translate(-50%, -50%);
-        -khtml-transform: translate(-50%, -50%);
-
-    }
-
-    .wsk-cp-text .category>span {
-        padding: 12px 30px;
-        border: 1px solid #313131;
-        background: #212121;
-        color: #fff;
-        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
-        border-radius: 27px;
-        transition: all 0.05s ease-in-out;
-
-    }
-
-    .wsk-cp-product:hover .wsk-cp-text .category>span {
-        border-color: #ddd;
-        box-shadow: none;
-        padding: 11px 28px;
-    }
-
-    .wsk-cp-product:hover .wsk-cp-text .category {
-        margin-top: 0px;
-    }
-
-    .wsk-cp-text .title-product {
-        text-align: center;
-    }
-
-    .wsk-cp-text .title-product h3 {
-        font-size: 20px;
-        font-weight: bold;
-        margin: 15px auto;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        width: 100%;
-    }
-
-    .wsk-cp-text .description-prod p {
         margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
     }
 
-    /* Truncate */
-    .wsk-cp-text .description-prod {
-        text-align: center;
+    .MuiGrid-container {
         width: 100%;
-        height: 62px;
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        margin-bottom: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
     }
 
-    .card-footer {
-        padding: 25px 0 5px;
-        border-top: 1px solid #ddd;
+    .MuiGrid-item {
+        margin: 0;
+        box-sizing: border-box;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
     }
 
-    .card-footer:after,
-    .card-footer:before {
-        content: '';
-        display: table;
+    @media (min-width: 960px) {
+        .MuiGrid-grid-md-3 {
+            flex-grow: 0;
+            max-width: 25%;
+            flex-basis: 25%;
+        }
     }
 
-    .card-footer:after {
-        clear: both;
+    @media (min-width: 1280px) {
+        .MuiGrid-grid-lg-3 {
+            flex-grow: 0;
+            max-width: 25%;
+            flex-basis: 25%;
+        }
     }
 
-    .card-footer .wcf-left {
-        float: left;
-
+    .MuiGrid-grid-xs-12 {
+        flex-grow: 0;
+        max-width: 100%;
+        flex-basis: 100%;
     }
 
-    .card-footer .wcf-right {
-        float: right;
+    @media (min-width: 600px) {
+        .MuiGrid-grid-sm-12 {
+            flex-grow: 0;
+            max-width: 100%;
+            flex-basis: 100%;
+        }
     }
 
-    .price {
-        font-size: 18px;
-        font-weight: bold;
+    @media (min-width: 960px) {
+        .MuiGrid-grid-md-9 {
+            flex-grow: 0;
+            max-width: 75%;
+            flex-basis: 75%;
+        }
     }
 
-    a.buy-btn {
-        display: block;
-        color: #212121;
+    @media (min-width: 1280px) {
+        .MuiGrid-grid-lg-9 {
+            flex-grow: 0;
+            max-width: 75%;
+            flex-basis: 75%;
+        }
+    }
+
+    .makeStyles-root-35 {
+        top: 10px;
+        width: 250px;
+        bottom: auto;
+        margin: 10px 0px;
+        position: sticky;
+        max-width: 250px;
+        min-width: 250px;
+        margin-top: 10px;
+        margin-right: 0px;
+        margin-bottom: 10px;
+        margin-left: 0px;
+    }
+
+    .makeStyles-root-45 {
+        padding-top: 10px;
+    }
+
+    .makeStyles-filterHeader-36 {
+        display: flex;
+        align-items: center;
+        padding-left: 25px;
+        border-bottom: 1px solid #edebef;
+        padding-bottom: 15px;
+        justify-content: space-between;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: rgb(237, 235, 239);
+    }
+
+    .makeStyles-filterContainer-41 {
+        border-right: 1px solid #edebef;
+        padding-left: 15px;
+        border-right-width: 1px;
+        border-right-style: solid;
+        border-right-color: rgb(237, 235, 239);
+    }
+
+    .makeStyles-filters-37 {
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .makeStyles-clearAll-38 {
+        color: rgb(255, 123, 0);
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    .makeStyles-filter-39 {
+        padding-top: 10px;
+        border-bottom: 1px solid #edebef;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: rgb(237, 235, 239);
+    }
+
+    .makeStyles-filterLabel-40 {
+        color: rgb(40, 44, 63);
+        font-size: 14px;
+        font-weight: 600;
+        padding-left: 12px;
+        text-transform: uppercase;
+    }
+
+    .makeStyles-listStyle-42 {
+        list-style: none;
+        list-style-position: initial;
+        list-style-image: initial;
+        list-style-type: none;
+    }
+
+    .makeStyles-root-48 {
+        width: 210px;
+        height: 410px;
+        margin: 0px 10px 30px;
+        position: relative;
+        box-sizing: border-box;
+        margin-top: 0px;
+        margin-right: 10px;
+        margin-bottom: 30px;
+        margin-left: 10px;
+    }
+
+    .makeStyles-root-48:hover {
+        cursor: pointer;
+        box-shadow: rgb(220, 215, 215) 0px 0px 5px 2px;
+        moz-box-shadow: 0 0 5px 2px #dcd7d7;
+        webkit-box-shadow: 0 0 5px 2px #dcd7d7;
+    }
+
+    .MuiButtonBase-root {
+        border: 0;
+        cursor: pointer;
+        margin: 0;
+        display: inline-flex;
+        outline: 0;
+        padding: 0;
+        position: relative;
+        align-items: center;
+        user-select: none;
+        border-radius: 0;
+        vertical-align: middle;
+        justify-content: center;
+        text-decoration: none;
+        background-color: transparent;
+        border-top-width: 0px;
+        border-right-width: 0px;
+        border-bottom-width: 0px;
+        border-left-width: 0px;
+        border-top-style: initial;
+        border-right-style: initial;
+        border-bottom-style: initial;
+        border-left-style: initial;
+        border-top-color: initial;
+        border-right-color: initial;
+        border-bottom-color: initial;
+        border-left-color: initial;
+        border-image-source: initial;
+        border-image-slice: initial;
+        border-image-width: initial;
+        border-image-outset: initial;
+        border-image-repeat: initial;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        outline-color: initial;
+        outline-style: initial;
+        outline-width: 0px;
+        padding-top: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+        padding-left: 0px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        text-decoration-line: none;
+        text-decoration-thickness: initial;
+        text-decoration-style: initial;
+        text-decoration-color: initial;
+        appearance: none;
+    }
+
+    .MuiIconButton-root {
+        flex: 0 0 auto;
+        color: rgba(0, 0, 0, 0.54);
+        padding: 12px;
+        overflow: visible;
+        font-size: 1.5rem;
         text-align: center;
-        font-size: 18px;
-        width: 35px;
-        height: 35px;
-        line-height: 35px;
+        transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
         border-radius: 50%;
-        border: 1px solid #212121;
-        transition: all 0.2s ease-in-out;
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: auto;
+        padding-top: 12px;
+        padding-right: 12px;
+        padding-bottom: 12px;
+        padding-left: 12px;
+        overflow-x: visible;
+        overflow-y: visible;
+        transition-duration: 150ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-delay: 0ms;
+        transition-property: background-color;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 50%;
     }
 
-    a.buy-btn:hover,
-    a.buy-btn:active,
-    a.buy-btn:focus {
-        border-color: #FF9800;
-        background: #FF9800;
-        color: #fff;
-        text-decoration: none;
+    .MuiIconButton-colorSecondary {
+        color: rgb(245, 98, 0);
     }
 
-    .wsk-btn {
+    .PrivateSwitchBase-root-54 {
+        padding: 9px;
+        padding-top: 9px;
+        padding-right: 9px;
+        padding-bottom: 9px;
+        padding-left: 9px;
+    }
+
+    .MuiCheckbox-root {
+        color: rgba(0, 0, 0, 0.54);
+    }
+
+    .MuiIconButton-root:hover {
+        background-color: rgba(0, 0, 0, 0.04);
+    }
+
+    .MuiIconButton-colorSecondary:hover {
+        background-color: rgba(245, 0, 87, 0.04);
+    }
+
+    .makeStyles-element-44 {
+        text-transform: capitalize;
+    }
+
+    .makeStyles-pictureContainer-49 {
+        width: 100%;
+    }
+
+    .makeStyles-root-48 .tagContainer {
+        top: 16px;
+        left: 0px;
+        color: rgb(255, 255, 255);
         display: inline-block;
-        color: #212121;
+        padding: 0 4px;
+        z-index: 1;
+        position: absolute;
+        font-size: 10px;
+        background: #ff6600cc;
+        font-weight: 500;
+        line-height: 16px;
+        text-transform: uppercase;
+        padding-top: 0px;
+        padding-right: 4px;
+        padding-bottom: 0px;
+        padding-left: 4px;
+        background-image: initial;
+        background-position-x: initial;
+        background-position-y: initial;
+        background-size: initial;
+        background-repeat-x: initial;
+        background-repeat-y: initial;
+        background-attachment: initial;
+        background-origin: initial;
+        background-clip: initial;
+        background-color: rgba(255, 123, 0, 0.8);
+    }
+
+    .makeStyles-root-48 .tagContainer:after {
+        top: 0px;
+        left: 100%;
+        width: 0px;
+        height: 0px;
+        content: "";
+        position: absolute;
+        border-color: #ff9100c0 transparent #ff3f6c80 #ff3f6ccc;
+        border-style: solid;
+        border-width: 8px;
+        border-top-color: rgba(255, 115, 0, 0.5);
+        border-right-color: transparent;
+        border-bottom-color: rgba(255, 123, 0, 0.5);
+        border-left-color: rgba(255, 133, 63, 0.8);
+        border-top-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        border-top-width: 8px;
+        border-right-width: 8px;
+        border-bottom-width: 8px;
+        border-left-width: 8px;
+    }
+
+    .makeStyles-root-48 .wishlistContainer {
+        top: 318px;
+        left: 0px;
+        width: 100%;
+        display: inline-flex;
+        opacity: 0;
+        padding: 2px 0px 2px 0px;
+        z-index: 2;
+        position: absolute;
+        justify-content: center;
+        background-color: rgb(255, 255, 255);
+        padding-top: 2px;
+        padding-right: 0px;
+        padding-bottom: 2px;
+        padding-left: 0px;
+    }
+
+    .makeStyles-root-48 .productRatingContainer {
+        top: 260px;
+        height: 18px;
+        display: flex;
+        padding: 0 0 0 4px;
+        position: absolute;
+        font-size: 12px;
+        align-items: center;
+        font-weight: 500;
+        margin-left: 10px;
+        border-radius: 2px;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding-top: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+        padding-left: 4px;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        border-bottom-left-radius: 2px;
+    }
+
+    .makeStyles-root-48 .productInfo {
+        padding: 0px 10px;
+        margin-top: 13px;
+        padding-top: 0px;
+        padding-right: 10px;
+        padding-bottom: 0px;
+        padding-left: 10px;
+    }
+
+    .MuiIconButton-label {
+        width: 100%;
+        display: flex;
+    }
+
+    .MuiTouchRipple-root {
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        z-index: 0;
+        overflow: hidden;
+        position: absolute;
+        pointer-events: none;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+    .Carousel-root-19 {
+        overflow: hidden;
+        position: relative;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+    .makeStyles-wishlist-52 {
+        color: rgb(40, 44, 63);
+        width: 80%;
+        border: 1px solid #d4d5d9;
+        display: flex;
+        padding: 8px 12px;
         text-align: center;
-        font-size: 18px;
-        transition: all 0.2s ease-in-out;
-        border-color: #FF9800;
-        background: #FF9800;
-        padding: 12px 30px;
-        border-radius: 27px;
-        margin: 0 5px;
+        font-weight: 500;
+        text-transform: uppercase;
+        justify-content: center;
+        border-top-width: 1px;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+        border-top-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        border-top-color: rgb(212, 213, 217);
+        border-right-color: rgb(212, 213, 217);
+        border-bottom-color: rgb(212, 213, 217);
+        border-left-color: rgb(212, 213, 217);
+        border-image-source: initial;
+        border-image-slice: initial;
+        border-image-width: initial;
+        border-image-outset: initial;
+        border-image-repeat: initial;
+        padding-top: 8px;
+        padding-right: 12px;
+        padding-bottom: 8px;
+        padding-left: 12px;
     }
 
-    .wsk-btn:hover,
-    .wsk-btn:focus,
-    .wsk-btn:active {
-        text-decoration: none;
-        color: #fff;
+    .makeStyles-wishlist-52:hover {
+        border: 1px solid #000000;
+        border-top-width: 1px;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+        border-top-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        border-top-color: rgb(0, 0, 0);
+        border-right-color: rgb(0, 0, 0);
+        border-bottom-color: rgb(0, 0, 0);
+        border-left-color: rgb(0, 0, 0);
+        border-image-source: initial;
+        border-image-slice: initial;
+        border-image-width: initial;
+        border-image-outset: initial;
+        border-image-repeat: initial;
     }
 
-    .red {
-        color: #F44336;
-        font-size: 22px;
+    .MuiSvgIcon-root {
+        fill: currentcolor;
+        width: 1em;
+        height: 1em;
         display: inline-block;
-        margin: 0 5px;
+        font-size: 1.5rem;
+        transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        flex-shrink: 0;
+        user-select: none;
+        transition-duration: 200ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-delay: 0ms;
+        transition-property: fill;
     }
 
-    @media screen and (max-width: 991px) {
-        .wsk-cp-product {
-            margin: 40px auto;
-        }
-
-        .wsk-cp-product .wsk-cp-img {
-            top: -40px;
-        }
-
-        .wsk-cp-product .wsk-cp-img img {
-            box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
-        }
-
-        .wsk-cp-product .wsk-cp-text .category>span {
-            border-color: #ddd;
-            box-shadow: none;
-            padding: 11px 28px;
-        }
-
-        .wsk-cp-product .wsk-cp-text .category {
-            margin-top: 0px;
-        }
-
-        a.buy-btn {
-            border-color: #FF9800;
-            background: #FF9800;
-            color: #fff;
-        }
+    .MuiSvgIcon-fontSizeSmall {
+        font-size: 1.25rem;
     }
 
-    a {
-        color: black;
+    .makeStyles-root-48 .productRatingCount {
+        display: flex;
+        margin-left: 4px;
+        padding-right: 4px;
+    }
+
+    .makeStyles-root-48 .brandName {
+        font-weight: 500;
+    }
+
+    .makeStyles-root-48 .productName {
+        text-transform: capitalize;
+    }
+
+    .makeStyles-root-48 .productSizes {
+        color: rgb(83, 86, 101);
+        display: none;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .PrivateSwitchBase-input-57 {
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        opacity: 0;
+        padding: 0;
+        z-index: 1;
+        position: absolute;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        padding-top: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+        padding-left: 0px;
+    }
+
+    .Carousel-indicators-20 {
+        width: 100%;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .makeStyles-root-48 .seperator {
+        margin: -.5px 6px 0 -2px;
+        font-size: 10px;
+        margin-top: -0.5px;
+        margin-right: 6px;
+        margin-bottom: 0px;
+        margin-left: -2px;
+    }
+
+    .makeStyles-root-48 .discountedPrice {
+        color: rgb(40, 44, 63);
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .makeStyles-root-48 .price {
+        color: rgb(126, 129, 140);
+        font-size: 12px;
+        font-weight: 400;
+        margin-left: 5px;
+    }
+
+    .makeStyles-root-48 .offer {
+        color: rgb(255, 144, 90);
+        font-size: 12px;
+        font-weight: 400;
+        margin-left: 5px;
+    }
+
+    .MuiIconButton-sizeSmall {
+        padding: 3px;
+        font-size: 1.125rem;
+        padding-top: 3px;
+        padding-right: 3px;
+        padding-bottom: 3px;
+        padding-left: 3px;
+    }
+
+    .Carousel-indicator-21 {
+        color: rgb(175, 175, 175);
+        cursor: pointer;
+        padding: 0;
+        transition: 200ms;
+        padding-top: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+        padding-left: 0px;
+        transition-duration: 200ms;
+        transition-timing-function: ease;
+        transition-delay: 0s;
+        transition-property: all;
+    }
+
+    .Carousel-active-23 {
+        color: rgb(73, 73, 73);
+    }
+
+    .Carousel-indicator-21:hover {
+        color: rgb(31, 31, 31);
+    }
+
+    .makeStyles-imageSlider-51 {
+        width: 210px;
+        cursor: pointer;
+        height: 280px;
+    }
+
+    .Carousel-indicatorIcon-22 {
+        font-size: 15px;
+    }
+
+    .colorFilter {
+        background-color: #d4d5d959;
     }
 </style>
 
 <body>
-
-
-
-    <div class="shell">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <a href="/app/dedicatedproduct">
-                        <div class="wsk-cp-product">
-                            <div class="wsk-cp-img">
-                                <img src="https://images.unsplash.com/photo-1590605095243-072811dbe64c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cG90dGVyeXxlbnwwfHwwfHw%3D&w=1000&q=80"
-                                    alt="Product" class="img-responsive" />
-                            </div>
-                            <div class="wsk-cp-text">
-                                <div class="category">
-                                    <span>Ethnic</span>
-                                </div>
-                                <div class="title-product">
-                                    <h3>My face not my heart</h3>
-                                </div>
-                                <div class="description-prod">
-                                    <p>Description Product tell me how to change playlist height size like 600px in
-                                        html5
-                                        player. player good work now check this link</p>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="wcf-left"><span class="price">Rp500.000</span></div>
-                                    <div class="wcf-right"><a href="#" class="buy-btn"><i
-                                                class="zmdi zmdi-shopping-basket"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
+    <div class="MuiGrid-root MuiGrid-container snipcss-eaZdM" style="padding-top: 20px;">
+        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-3 MuiGrid-grid-lg-3 MuiGrid-grid-xl-3"
+            display="[object Object]">
+            <div class="makeStyles-root-35">
+                <div class="colorFilter MuiGrid-root makeStyles-filterHeader-36">
+                    <span class="makeStyles-filters-37">
+                        filters
+                    </span>
+                    <span class="colorFilter makeStyles-clearAll-38">
+                        clear all
+                    </span>
                 </div>
-
-                <div class="col-md-3">
-                    <a href="/app/dedicatedproduct">
-                        <div class="wsk-cp-product">
-                            <div class="wsk-cp-img"><img
-                                    src="https://w0.peakpx.com/wallpaper/580/717/HD-wallpaper-work-king-pottery.jpg"
-                                    alt="Product" class="img-responsive" /></div>
-                            <div class="wsk-cp-text">
-                                <div class="category">
-                                    <span>Introvert</span>
-                                </div>
-                                <div class="title-product">
-                                    <h3>My face not my heart</h3>
-                                </div>
-                                <div class="description-prod">
-                                    <p>Description Product tell me how to change playlist height size like 600px in
-                                        html5
-                                        player. player good work now check this link</p>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="wcf-left"><span class="price">Rp500.000</span></div>
-                                    <div class="wcf-right"><a href="#" class="buy-btn"><i
-                                                class="zmdi zmdi-shopping-basket"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
-                </div>
-                <div class="col-md-3">
-                    <a href="/app/dedicatedproduct">
-                        <div class="wsk-cp-product">
-                            <div class="wsk-cp-img"><img
-                                    src="https://images.unsplash.com/photo-1590605095243-072811dbe64c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cG90dGVyeXxlbnwwfHwwfHw%3D&w=1000&q=80"
-                                    alt="Product" class="img-responsive" /></div>
-                            <div class="wsk-cp-text">
-                                <div class="category">
-                                    <span>Beauty</span>
-                                </div>
-                                <div class="title-product">
-                                    <h3>My face not my heart</h3>
-                                </div>
-                                <div class="description-prod">
-                                    <p>Description Product tell me how to change playlist height size like 600px in
-                                        html5
-                                        player. player good work now check this link</p>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="wcf-left"><span class="price">Rp500.000</span></div>
-                                    <div class="wcf-right"><a href="#" class="buy-btn"><i
-                                                class="zmdi zmdi-shopping-basket"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
-                </div>
-                <div class="col-md-3">
-                    <a href="/app/dedicatedproduct">
-                        <div class="wsk-cp-product">
-                            <div class="wsk-cp-img"><img
-                                    src="https://w0.peakpx.com/wallpaper/580/717/HD-wallpaper-work-king-pottery.jpg"
-                                    alt="Product" class="img-responsive" /></div>
-                            <div class="wsk-cp-text">
-                                <div class="category">
-                                    <span>Drama</span>
-                                </div>
-                                <div class="title-product">
-                                    <h3>My face not my heart cvf ggf gfg g</h3>
-                                </div>
-                                <div class="description-prod">
-                                    <p>Description Product tell me how to change playlist height size like 600px in
-                                        html5
-                                        player. player good work now check this link</p>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="wcf-left"><span class="price">Rp500.000</span></div>
-                                    <div class="wcf-right"><a href="#" class="buy-btn"><i
-                                                class="zmdi zmdi-shopping-basket"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <a href="/app/dedicatedproduct">
-                        <div class="wsk-cp-product">
-                            <div class="wsk-cp-img">
-                                <img src="https://images.unsplash.com/photo-1590605095243-072811dbe64c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cG90dGVyeXxlbnwwfHwwfHw%3D&w=1000&q=80"
-                                    alt="Product" class="img-responsive" />
-                            </div>
-                            <div class="wsk-cp-text">
-                                <div class="category">
-                                    <span>Ethnic</span>
-                                </div>
-                                <div class="title-product">
-                                    <h3>My face not my heart</h3>
-                                </div>
-                                <div class="description-prod">
-                                    <p>Description Product tell me how to change playlist height size like 600px in
-                                        html5
-                                        player. player good work now check this link</p>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="wcf-left"><span class="price">Rp500.000</span></div>
-                                    <div class="wcf-right"><a href="#" class="buy-btn"><i
-                                                class="zmdi zmdi-shopping-basket"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
-                </div>
-                <div class="col-md-3">
-                    <a href="/app/dedicatedproduct">
-
-                        <div class="wsk-cp-product">
-                            <div class="wsk-cp-img"><img
-                                    src="https://w0.peakpx.com/wallpaper/580/717/HD-wallpaper-work-king-pottery.jpg"
-                                    alt="Product" class="img-responsive" /></div>
-                            <div class="wsk-cp-text">
-                                <div class="category">
-                                    <span>Introvert</span>
-                                </div>
-                                <div class="title-product">
-                                    <h3>My face not my heart</h3>
-                                </div>
-                                <div class="description-prod">
-                                    <p>Description Product tell me how to change playlist height size like 600px in
-                                        html5
-                                        player. player good work now check this link</p>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="wcf-left"><span class="price">Rp500.000</span></div>
-                                    <div class="wcf-right"><a href="#" class="buy-btn"><i
-                                                class="zmdi zmdi-shopping-basket"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </a>
-
-                </div>
-                <div class="col-md-3">
-                    <a href="/app/dedicatedproduct">
-                        <div class="wsk-cp-product">
-                            <div class="wsk-cp-img"><img
-                                    src="https://images.unsplash.com/photo-1590605095243-072811dbe64c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cG90dGVyeXxlbnwwfHwwfHw%3D&w=1000&q=80"
-                                    alt="Product" class="img-responsive" /></div>
-                            <div class="wsk-cp-text">
-                                <div class="category">
-                                    <span>Beauty</span>
-                                </div>
-                                <div class="title-product">
-                                    <h3>My face not my heart</h3>
-                                </div>
-                                <div class="description-prod">
-                                    <p>Description Product tell me how to change playlist height size like 600px in
-                                        html5
-                                        player. player good work now check this link</p>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="wcf-left"><span class="price">Rp500.000</span></div>
-                                    <div class="wcf-right"><a href="#" class="buy-btn"><i
-                                                class="zmdi zmdi-shopping-basket"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
-                </div>
-                <div class="col-md-3">
-                    <a href="/app/dedicatedproduct">
-                        <div class="wsk-cp-product">
-                            <div class="wsk-cp-img"><img
-                                    src="https://w0.peakpx.com/wallpaper/580/717/HD-wallpaper-work-king-pottery.jpg"
-                                    alt="Product" class="img-responsive" /></div>
-                            <div class="wsk-cp-text">
-                                <div class="category">
-                                    <span>Drama</span>
-                                </div>
-                                <div class="title-product">
-                                    <h3>My face not my heart cvf ggf gfg g</h3>
-                                </div>
-                                <div class="description-prod">
-                                    <p>Description Product tell me how to change playlist height size like 600px in
-                                        html5
-                                        player. player good work now check this link</p>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="wcf-left"><span class="price">Rp500.000</span></div>
-                                    <div class="wcf-right"><a href="#" class="buy-btn"><i
-                                                class="zmdi zmdi-shopping-basket"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
-
+                <div class="MuiGrid-root colorFilter makeStyles-filterContainer-41">
+                    <div class="MuiGrid-root makeStyles-filter-39">
+                        <span class="makeStyles-filterLabel-40">
+                            categories
+                        </span>
+                        <li class="makeStyles-listStyle-42">
+                            <span
+                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-54 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                                aria-disabled="false">
+                                <span class="MuiIconButton-label">
+                                    <input class="PrivateSwitchBase-input-57" type="checkbox" data-indeterminate="false"
+                                        padding="0px" margin="0px" aria-label="primary checkbox" value="">
+                                    <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24"
+                                        aria-hidden="true">
+                                        <path
+                                            d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <span class="MuiTouchRipple-root">
+                                </span>
+                            </span>
+                            <span class="makeStyles-element-44">
+                                Tshirts
+                            </span>
+                        </li>
+                        <li class="makeStyles-listStyle-42">
+                            <span
+                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-54 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                                aria-disabled="false">
+                                <span class="MuiIconButton-label">
+                                    <input class="PrivateSwitchBase-input-57" type="checkbox" data-indeterminate="false"
+                                        padding="0px" margin="0px" aria-label="primary checkbox" value="">
+                                    <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24"
+                                        aria-hidden="true">
+                                        <path
+                                            d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <span class="MuiTouchRipple-root">
+                                </span>
+                            </span>
+                            <span class="makeStyles-element-44">
+                                formal
+                            </span>
+                        </li>
+                    </div>
+                    <div class="MuiGrid-root colorFilter makeStyles-filter-39">
+                        <span class="makeStyles-filterLabel-40">
+                            brand
+                        </span>
+                        <li class="makeStyles-listStyle-42">
+                            <span
+                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-54 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                                aria-disabled="false">
+                                <span class="MuiIconButton-label">
+                                    <input class="PrivateSwitchBase-input-57" type="checkbox" data-indeterminate="false"
+                                        aria-label="primary checkbox" value="">
+                                    <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24"
+                                        aria-hidden="true">
+                                        <path
+                                            d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <span class="MuiTouchRipple-root">
+                                </span>
+                            </span>
+                            <span class="makeStyles-element-44">
+                                Anchor
+                            </span>
+                        </li>
+                        <li class="makeStyles-listStyle-42">
+                            <span
+                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-54 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                                aria-disabled="false">
+                                <span class="MuiIconButton-label">
+                                    <input class="PrivateSwitchBase-input-57" type="checkbox" data-indeterminate="false"
+                                        aria-label="primary checkbox" value="">
+                                    <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24"
+                                        aria-hidden="true">
+                                        <path
+                                            d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <span class="MuiTouchRipple-root">
+                                </span>
+                            </span>
+                            <span class="makeStyles-element-44">
+                                Ester
+                            </span>
+                        </li>
+                        <li class="makeStyles-listStyle-42">
+                            <span
+                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-54 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                                aria-disabled="false">
+                                <span class="MuiIconButton-label">
+                                    <input class="PrivateSwitchBase-input-57" type="checkbox" data-indeterminate="false"
+                                        aria-label="primary checkbox" value="">
+                                    <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24"
+                                        aria-hidden="true">
+                                        <path
+                                            d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <span class="MuiTouchRipple-root">
+                                </span>
+                            </span>
+                            <span class="makeStyles-element-44">
+                                Estern
+                            </span>
+                        </li>
+                    </div>
+                    <div class="MuiGrid-root makeStyles-filter-39">
+                        <span class="makeStyles-filterLabel-40">
+                            Color
+                        </span>
+                        <li class="makeStyles-listStyle-42">
+                            <span
+                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-54 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                                aria-disabled="false">
+                                <span class="MuiIconButton-label">
+                                    <input class="PrivateSwitchBase-input-57" type="checkbox" data-indeterminate="false"
+                                        aria-label="primary checkbox" value="">
+                                    <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24"
+                                        aria-hidden="true">
+                                        <path
+                                            d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <span class="MuiTouchRipple-root">
+                                </span>
+                            </span>
+                            <span class="makeStyles-element-44">
+                                black
+                            </span>
+                        </li>
+                        <li class="makeStyles-listStyle-42">
+                            <span
+                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-54 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                                aria-disabled="false">
+                                <span class="MuiIconButton-label">
+                                    <input class="PrivateSwitchBase-input-57" type="checkbox" data-indeterminate="false"
+                                        aria-label="primary checkbox" value="">
+                                    <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24"
+                                        aria-hidden="true">
+                                        <path
+                                            d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <span class="MuiTouchRipple-root">
+                                </span>
+                            </span>
+                            <span class="makeStyles-element-44">
+                                orange
+                            </span>
+                        </li>
+                        <li class="makeStyles-listStyle-42">
+                            <span
+                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-54 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                                aria-disabled="false">
+                                <span class="MuiIconButton-label">
+                                    <input class="PrivateSwitchBase-input-57" type="checkbox" data-indeterminate="false"
+                                        aria-label="primary checkbox" value="">
+                                    <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24"
+                                        aria-hidden="true">
+                                        <path
+                                            d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <span class="MuiTouchRipple-root">
+                                </span>
+                            </span>
+                            <span class="makeStyles-element-44">
+                                gray
+                            </span>
+                        </li>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <a href="/app/dedicatedproduct">
-                        <div class="wsk-cp-product">
-                            <div class="wsk-cp-img">
-                                <img src="https://images.unsplash.com/photo-1590605095243-072811dbe64c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cG90dGVyeXxlbnwwfHwwfHw%3D&w=1000&q=80"
-                                    alt="Product" class="img-responsive" />
+        </div>
+        <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-9 MuiGrid-grid-lg-9 MuiGrid-grid-xl-9">
+            <% for( let index = 0; index < 5; index++ ) { %>
+            <div class="makeStyles-root-45">
+                <div class="MuiGrid-root MuiGrid-container">
+                    <div class="MuiGrid-root MuiGrid-item" style="margin: 0px auto;">
+                        <div class="makeStyles-root-48">
+                            <div class="makeStyles-pictureContainer-49">
+                                <div class="Carousel-root-19 ">
+                                    <div class="CarouselItem">
+                                        <div
+                                            style="opacity: 1; transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;">
+                                            <div class="makeStyles-imageSlider-51">
+                                                <img src="https://res.cloudinary.com/dq0qx65vj/image/upload/v1630152367/whistler/products/men/cibelly-roberta-SE4Xc1WvIkU-unsplash_uwavtz.jpg"
+                                                    style="height: 100%; max-height: 100%; min-height: 100%; width: 100%; max-width: 100%; min-width: 100%;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="Carousel-indicators-20 ">
+                                        <button
+                                            class="MuiButtonBase-root MuiIconButton-root Carousel-indicator-21  Carousel-active-23  MuiIconButton-sizeSmall"
+                                            tabindex="0" type="button" aria-label="carousel indicator 1"
+                                            style="margin-top: 0px; color: rgb(255, 62, 108);">
+                                            <span class="MuiIconButton-label">
+                                                <svg class="MuiSvgIcon-root Carousel-indicatorIcon-22" focusable="false"
+                                                    viewBox="0 0 24 24" aria-hidden="true">
+                                                    <circle cx="12" cy="12" r="8">
+                                                    </circle>
+                                                </svg>
+                                            </span>
+                                            <span class="MuiTouchRipple-root">
+                                            </span>
+                                        </button>
+                                        <button
+                                            class="MuiButtonBase-root MuiIconButton-root Carousel-indicator-21  MuiIconButton-sizeSmall"
+                                            tabindex="0" type="button" aria-label="carousel indicator 2"
+                                            style="margin-top: 0px;">
+                                            <span class="MuiIconButton-label">
+                                                <svg class="MuiSvgIcon-root Carousel-indicatorIcon-22" focusable="false"
+                                                    viewBox="0 0 24 24" aria-hidden="true">
+                                                    <circle cx="12" cy="12" r="8">
+                                                    </circle>
+                                                </svg>
+                                            </span>
+                                            <span class="MuiTouchRipple-root">
+                                            </span>
+                                        </button>
+                                        <button
+                                            class="MuiButtonBase-root MuiIconButton-root Carousel-indicator-21  MuiIconButton-sizeSmall"
+                                            tabindex="0" type="button" aria-label="carousel indicator 3"
+                                            style="margin-top: 0px;">
+                                            <span class="MuiIconButton-label">
+                                                <svg class="MuiSvgIcon-root Carousel-indicatorIcon-22" focusable="false"
+                                                    viewBox="0 0 24 24" aria-hidden="true">
+                                                    <circle cx="12" cy="12" r="8">
+                                                    </circle>
+                                                </svg>
+                                            </span>
+                                            <span class="MuiTouchRipple-root">
+                                            </span>
+                                        </button>
+                                        <button
+                                            class="MuiButtonBase-root MuiIconButton-root Carousel-indicator-21  MuiIconButton-sizeSmall"
+                                            tabindex="0" type="button" aria-label="carousel indicator 4"
+                                            style="margin-top: 0px;">
+                                            <span class="MuiIconButton-label">
+                                                <svg class="MuiSvgIcon-root Carousel-indicatorIcon-22" focusable="false"
+                                                    viewBox="0 0 24 24" aria-hidden="true">
+                                                    <circle cx="12" cy="12" r="8">
+                                                    </circle>
+                                                </svg>
+                                            </span>
+                                            <span class="MuiTouchRipple-root">
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="wsk-cp-text">
-                                <div class="category">
-                                    <span>Ethnic</span>
+                            <div class="tagContainer">
+                                trending
+                            </div>
+                            <div class="wishlistContainer">
+                                <span class="makeStyles-wishlist-52">
+                                    <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24"
+                                        aria-hidden="true">
+                                        <path
+                                            d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z">
+                                        </path>
+                                    </svg>
+                                    wishlist
+                                </span>
+                            </div>
+                            <div class="productRatingContainer">
+                                <span>
+                                    4.8
+                                </span>
+                                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall" focusable="false"
+                                    viewBox="0 0 24 24" color="#68D391" aria-hidden="true">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z">
+                                    </path>
+                                </svg>
+                                <div class="productRatingCount">
+                                    <div class="seperator">
+                                        |
+                                    </div>
+                                    520
                                 </div>
-                                <div class="title-product">
-                                    <h3>My face not my heart</h3>
+                            </div>
+                            <div class="productInfo">
+                                <div class="brandName">
+                                    Anchor
                                 </div>
-                                <div class="description-prod">
-                                    <p>Description Product tell me how to change playlist height size like 600px in
-                                        html5
-                                        player. player good work now check this link</p>
+                                <div class="productName">
+                                    Black T-Shirt
                                 </div>
-                                <div class="card-footer">
-                                    <div class="wcf-left"><span class="price">Rp500.000</span></div>
-                                    <div class="wcf-right"><a href="#" class="buy-btn"><i
-                                                class="zmdi zmdi-shopping-basket"></i></a></div>
+                                <div class="productSizes">
+                                    Sizes:
+                                    <span>
+                                        Onesize
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="discountedPrice">
+                                        Rs. 600
+                                    </span>
+                                    <strike class="price">
+                                        Rs. 1090
+                                    </strike>
+                                    <span class="offer">
+                                        (40%Off)
+                                    </span>
                                 </div>
                             </div>
                         </div>
-                    </a>
-
-
-
-                </div>
-                <div class="col-md-3">
-                    <a href="/app/dedicatedproduct">
-
-                        <div class="wsk-cp-product">
-                            <div class="wsk-cp-img"><img
-                                    src="https://w0.peakpx.com/wallpaper/580/717/HD-wallpaper-work-king-pottery.jpg"
-                                    alt="Product" class="img-responsive" /></div>
-                            <div class="wsk-cp-text">
-                                <div class="category">
-                                    <span>Introvert</span>
+                    </div>
+                    <div class="MuiGrid-root MuiGrid-item" style="margin: 0px auto;">
+                        <div class="makeStyles-root-48">
+                            <div class="makeStyles-pictureContainer-49">
+                                <div class="Carousel-root-19 ">
+                                    <div class="CarouselItem">
+                                        <div
+                                            style="opacity: 1; transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;">
+                                            <div class="makeStyles-imageSlider-51">
+                                                <img src="https://res.cloudinary.com/dq0qx65vj/image/upload/v1630210309/whistler/products/men/dollar-gill-LmtUqlYRJO4-unsplash_kupjhe.jpg"
+                                                    style="height: 100%; max-height: 100%; min-height: 100%; width: 100%; max-width: 100%; min-width: 100%;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="Carousel-indicators-20 ">
+                                        <button
+                                            class="MuiButtonBase-root MuiIconButton-root Carousel-indicator-21  Carousel-active-23  MuiIconButton-sizeSmall"
+                                            tabindex="0" type="button" aria-label="carousel indicator 1"
+                                            style="margin-top: 0px; color: rgb(255, 62, 108);">
+                                            <span class="MuiIconButton-label">
+                                                <svg class="MuiSvgIcon-root Carousel-indicatorIcon-22" focusable="false"
+                                                    viewBox="0 0 24 24" aria-hidden="true">
+                                                    <circle cx="12" cy="12" r="8">
+                                                    </circle>
+                                                </svg>
+                                            </span>
+                                            <span class="MuiTouchRipple-root">
+                                            </span>
+                                        </button>
+                                        <button
+                                            class="MuiButtonBase-root MuiIconButton-root Carousel-indicator-21  MuiIconButton-sizeSmall"
+                                            tabindex="0" type="button" aria-label="carousel indicator 2"
+                                            style="margin-top: 0px;">
+                                            <span class="MuiIconButton-label">
+                                                <svg class="MuiSvgIcon-root Carousel-indicatorIcon-22" focusable="false"
+                                                    viewBox="0 0 24 24" aria-hidden="true">
+                                                    <circle cx="12" cy="12" r="8">
+                                                    </circle>
+                                                </svg>
+                                            </span>
+                                            <span class="MuiTouchRipple-root">
+                                            </span>
+                                        </button>
+                                        <button
+                                            class="MuiButtonBase-root MuiIconButton-root Carousel-indicator-21  MuiIconButton-sizeSmall"
+                                            tabindex="0" type="button" aria-label="carousel indicator 3"
+                                            style="margin-top: 0px;">
+                                            <span class="MuiIconButton-label">
+                                                <svg class="MuiSvgIcon-root Carousel-indicatorIcon-22" focusable="false"
+                                                    viewBox="0 0 24 24" aria-hidden="true">
+                                                    <circle cx="12" cy="12" r="8">
+                                                    </circle>
+                                                </svg>
+                                            </span>
+                                            <span class="MuiTouchRipple-root">
+                                            </span>
+                                        </button>
+                                    </div>
                                 </div>
-                                <div class="title-product">
-                                    <h3>My face not my heart</h3>
+                            </div>
+                            <div class="tagContainer">
+                                new season
+                            </div>
+                            <div class="wishlistContainer">
+                                <span class="makeStyles-wishlist-52">
+                                    <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24"
+                                        aria-hidden="true">
+                                        <path
+                                            d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z">
+                                        </path>
+                                    </svg>
+                                    wishlist
+                                </span>
+                            </div>
+                            <div class="productRatingContainer">
+                                <span>
+                                    4.8
+                                </span>
+                                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall" focusable="false"
+                                    viewBox="0 0 24 24" color="#68D391" aria-hidden="true">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z">
+                                    </path>
+                                </svg>
+                                <div class="productRatingCount">
+                                    <div class="seperator">
+                                        |
+                                    </div>
+                                    800
                                 </div>
-                                <div class="description-prod">
-                                    <p>Description Product tell me how to change playlist height size like 600px in
-                                        html5
-                                        player. player good work now check this link</p>
+                            </div>
+                            <div class="productInfo">
+                                <div class="brandName">
+                                    Ester
                                 </div>
-                                <div class="card-footer">
-                                    <div class="wcf-left"><span class="price">Rp500.000</span></div>
-                                    <div class="wcf-right"><a href="#" class="buy-btn"><i
-                                                class="zmdi zmdi-shopping-basket"></i></a></div>
+                                <div class="productName">
+                                    Orange Trends
+                                </div>
+                                <div class="productSizes">
+                                    Sizes:
+                                    <span>
+                                        Onesize
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="discountedPrice">
+                                        Rs. 600
+                                    </span>
+                                    <strike class="price">
+                                        Rs. 1090
+                                    </strike>
+                                    <span class="offer">
+                                        (40%Off)
+                                    </span>
                                 </div>
                             </div>
                         </div>
-                    </a>
-
-                </div>
-                <div class="col-md-3">
-                    <a href="/app/dedicatedproduct">
-                        <div class="wsk-cp-product">
-                            <div class="wsk-cp-img"><img
-                                    src="https://images.unsplash.com/photo-1590605095243-072811dbe64c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cG90dGVyeXxlbnwwfHwwfHw%3D&w=1000&q=80"
-                                    alt="Product" class="img-responsive" /></div>
-                            <div class="wsk-cp-text">
-                                <div class="category">
-                                    <span>Beauty</span>
+                    </div>
+                    <div class="MuiGrid-root MuiGrid-item" style="margin: 0px auto;">
+                        <div class="makeStyles-root-48">
+                            <div class="makeStyles-pictureContainer-49">
+                                <div class="Carousel-root-19 ">
+                                    <div class="CarouselItem">
+                                        <div
+                                            style="opacity: 1; transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;">
+                                            <div class="makeStyles-imageSlider-51">
+                                                <img src="https://res.cloudinary.com/dq0qx65vj/image/upload/v1630210361/whistler/products/men/mohamad-khosravi-Matg3I8sGZg-unsplash_tdys2p.jpg"
+                                                    style="height: 100%; max-height: 100%; min-height: 100%; width: 100%; max-width: 100%; min-width: 100%;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="Carousel-indicators-20 ">
+                                        <button
+                                            class="MuiButtonBase-root MuiIconButton-root Carousel-indicator-21  Carousel-active-23  MuiIconButton-sizeSmall"
+                                            tabindex="0" type="button" aria-label="carousel indicator 1"
+                                            style="margin-top: 0px; color: rgb(255, 62, 108);">
+                                            <span class="MuiIconButton-label">
+                                                <svg class="MuiSvgIcon-root Carousel-indicatorIcon-22" focusable="false"
+                                                    viewBox="0 0 24 24" aria-hidden="true">
+                                                    <circle cx="12" cy="12" r="8">
+                                                    </circle>
+                                                </svg>
+                                            </span>
+                                            <span class="MuiTouchRipple-root">
+                                            </span>
+                                        </button>
+                                        <button
+                                            class="MuiButtonBase-root MuiIconButton-root Carousel-indicator-21  MuiIconButton-sizeSmall"
+                                            tabindex="0" type="button" aria-label="carousel indicator 2"
+                                            style="margin-top: 0px;">
+                                            <span class="MuiIconButton-label">
+                                                <svg class="MuiSvgIcon-root Carousel-indicatorIcon-22" focusable="false"
+                                                    viewBox="0 0 24 24" aria-hidden="true">
+                                                    <circle cx="12" cy="12" r="8">
+                                                    </circle>
+                                                </svg>
+                                            </span>
+                                            <span class="MuiTouchRipple-root">
+                                            </span>
+                                        </button>
+                                        <button
+                                            class="MuiButtonBase-root MuiIconButton-root Carousel-indicator-21  MuiIconButton-sizeSmall"
+                                            tabindex="0" type="button" aria-label="carousel indicator 3"
+                                            style="margin-top: 0px;">
+                                            <span class="MuiIconButton-label">
+                                                <svg class="MuiSvgIcon-root Carousel-indicatorIcon-22" focusable="false"
+                                                    viewBox="0 0 24 24" aria-hidden="true">
+                                                    <circle cx="12" cy="12" r="8">
+                                                    </circle>
+                                                </svg>
+                                            </span>
+                                            <span class="MuiTouchRipple-root">
+                                            </span>
+                                        </button>
+                                    </div>
                                 </div>
-                                <div class="title-product">
-                                    <h3>My face not my heart</h3>
+                            </div>
+                            <div class="wishlistContainer">
+                                <span class="makeStyles-wishlist-52">
+                                    <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24"
+                                        aria-hidden="true">
+                                        <path
+                                            d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z">
+                                        </path>
+                                    </svg>
+                                    wishlist
+                                </span>
+                            </div>
+                            <div class="productRatingContainer">
+                                <span>
+                                    4.7
+                                </span>
+                                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall" focusable="false"
+                                    viewBox="0 0 24 24" color="#68D391" aria-hidden="true">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z">
+                                    </path>
+                                </svg>
+                                <div class="productRatingCount">
+                                    <div class="seperator">
+                                        |
+                                    </div>
+                                    1200
                                 </div>
-                                <div class="description-prod">
-                                    <p>Description Product tell me how to change playlist height size like 600px in
-                                        html5
-                                        player. player good work now check this link</p>
+                            </div>
+                            <div class="productInfo">
+                                <div class="brandName">
+                                    Estern
                                 </div>
-                                <div class="card-footer">
-                                    <div class="wcf-left"><span class="price">Rp500.000</span></div>
-                                    <div class="wcf-right"><a href="#" class="buy-btn"><i
-                                                class="zmdi zmdi-shopping-basket"></i></a></div>
+                                <div class="productName">
+                                    Office Formal
+                                </div>
+                                <div class="productSizes">
+                                    Sizes:
+                                    <span>
+                                        Onesize
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="discountedPrice">
+                                        Rs. 900
+                                    </span>
+                                    <strike class="price">
+                                        Rs. 1190
+                                    </strike>
+                                    <span class="offer">
+                                        (40%Off)
+                                    </span>
                                 </div>
                             </div>
                         </div>
-                    </a>
-
-
+                    </div>
                 </div>
-
             </div>
+            <% } %>
+
+
         </div>
     </div>
 

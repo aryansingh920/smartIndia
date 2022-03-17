@@ -16,161 +16,457 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
 </script>
+
 <style>
-    a:hover {
-        text-decoration: none;
-        border: none;
+    @import url("https://fonts.googleapis.com/css?family=Poppins|Roboto");
+
+    body {
+        color: rgb(88, 89, 91);
+    }
+
+    .snipcss-cn28Y {
+        color: rgb(255, 255, 255) !important;
     }
 
     body {
-        background-color: #ffffff;
-        background-image: url("https://www.transparenttextures.com/patterns/egg-shell.png");
-
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
     }
 
-    .form-inputs {
-        position: relative
+    .MuiPaper-root {
+        color: rgba(0, 0, 0, 0.87);
+        transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        background-color: rgb(255, 255, 255);
+        transition-duration: 300ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-delay: 0ms;
+        transition-property: box-shadow;
     }
 
-    .form-inputs .form-control {
-        height: 45px
+    .MuiPaper-elevation4 {
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
     }
 
-    .form-inputs .form-control:focus {
-        box-shadow: none;
-        border: 1px solid #000
-    }
-
-    .form-inputs i {
-        position: absolute;
-        right: 10px;
-        top: 15px
-    }
-
-    .shop-bag {
-        background-color: #000;
-        color: #fff;
-        height: 50px;
-        width: 50px;
-        font-size: 25px;
+    .MuiAppBar-root {
+        width: 100%;
         display: flex;
-        border-radius: 50%;
-        align-items: center;
-        justify-content: center
+        z-index: 1100;
+        box-sizing: border-box;
+        flex-shrink: 0;
+        flex-direction: column;
     }
 
-    .qty {
-        font-size: 12px
+    .MuiAppBar-positionFixed {
+        top: 0px;
+        left: auto;
+        right: 0px;
+        position: fixed;
     }
+
+    .jss3 {
+        width: 100%;
+        padding: 20px 0px 0px;
+        position: sticky;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 12px 0px;
+        padding-top: 20px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+        padding-left: 0px;
+    }
+
+    .MuiGrid-container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+    }
+
+    .jss4 {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .jss5 {
+        color: rgb(40, 44, 63);
+        display: flex;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 40px;
+        margin-left: 25px;
+        text-transform: uppercase;
+    }
+
+    .jss12 {
+        display: flex;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 30px;
+        margin-right: 20px;
+        text-transform: capitalize;
+    }
+
+    .jss6 {
+        color: rgb(40, 44, 63);
+        cursor: pointer;
+        padding: 0 12px 0 12px;
+        text-decoration: none;
+        padding-top: 0px;
+        padding-right: 12px;
+        padding-bottom: 0px;
+        padding-left: 12px;
+        text-decoration-line: none;
+        text-decoration-thickness: initial;
+        text-decoration-style: initial;
+        text-decoration-color: initial;
+    }
+
+    .jss7:hover {
+        border-bottom: 4px solid #ee5f73;
+        border-bottom-width: 4px;
+        border-bottom-style: solid;
+        border-bottom-color: rgb(238, 95, 115);
+    }
+
+    .jss8:hover {
+        border-bottom: 4px solid #fb56c1;
+        border-bottom-width: 4px;
+        border-bottom-style: solid;
+        border-bottom-color: rgb(251, 86, 193);
+    }
+
+    .jss9:hover {
+        border-bottom: 4px solid #f26a10;
+        border-bottom-width: 4px;
+        border-bottom-style: solid;
+        border-bottom-color: rgb(242, 106, 16);
+    }
+
+    .jss14 {
+        cursor: pointer;
+        height: 50px;
+        display: flex;
+        padding: 0 12px 0 17px;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 0px;
+        padding-right: 12px;
+        padding-bottom: 0px;
+        padding-left: 17px;
+    }
+
+    .jss14:hover {
+        border-bottom: 4px solid #ee5f73;
+        border-bottom-width: 4px;
+        border-bottom-style: solid;
+        border-bottom-color: rgb(238, 95, 115);
+    }
+
+    .jss13 {
+        cursor: pointer;
+        display: flex;
+        padding: 0 12px 0 17px;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 0px;
+        padding-right: 12px;
+        padding-bottom: 0px;
+        padding-left: 17px;
+    }
+
+    .jss17 {
+        color: rgb(105, 110, 121);
+        width: 100%;
+        position: relative;
+        margin-left: 0px;
+        margin-right: 16px;
+        border-radius: 8px;
+        background-color: rgb(245, 245, 246);
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+    }
+
+    @media (min-width: 600px) {
+        .jss17 {
+            width: auto;
+            margin-left: 24px;
+        }
+    }
+
+    .jss17:hover {
+        color: rgb(105, 110, 121);
+        background-color: rgb(245, 245, 246);
+    }
+
+    .MuiSvgIcon-root {
+        fill: currentcolor;
+        width: 1em;
+        height: 1em;
+        display: inline-block;
+        font-size: 1.5rem;
+        transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        flex-shrink: 0;
+        user-select: none;
+        transition-duration: 200ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-delay: 0ms;
+        transition-property: fill;
+    }
+
+    .MuiBadge-root {
+        display: inline-flex;
+        position: relative;
+        flex-shrink: 0;
+        vertical-align: middle;
+    }
+
+    .jss18 {
+        cursor: pointer;
+        height: 100%;
+        display: flex;
+        padding: 0px 8px;
+        position: absolute;
+        align-items: center;
+        pointer-events: none;
+        justify-content: center;
+        padding-top: 0px;
+        padding-right: 8px;
+        padding-bottom: 0px;
+        padding-left: 8px;
+    }
+
+    .MuiInputBase-root {
+        color: rgba(0, 0, 0, 0.87);
+        cursor: text;
+        display: inline-flex;
+        position: relative;
+        font-size: 1rem;
+        box-sizing: border-box;
+        align-items: center;
+        font-family: Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        line-height: 1.1876em;
+        letter-spacing: 0.00938em;
+    }
+
+    .jss15 {
+        width: 400px;
+    }
+
+    .MuiBadge-badge {
+        height: 20px;
+        display: flex;
+        padding: 0 6px;
+        z-index: 1;
+        position: absolute;
+        flex-wrap: wrap;
+        font-size: 0.75rem;
+        min-width: 20px;
+        box-sizing: border-box;
+        transition: transform 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        align-items: center;
+        font-family: Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 500;
+        line-height: 1;
+        align-content: center;
+        border-radius: 10px;
+        flex-direction: row;
+        justify-content: center;
+        padding-top: 0px;
+        padding-right: 6px;
+        padding-bottom: 0px;
+        padding-left: 6px;
+        transition-duration: 225ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-delay: 0ms;
+        transition-property: transform;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    .MuiBadge-colorSecondary {
+        color: rgb(255, 255, 255);
+        background-color: rgb(245, 0, 87);
+    }
+
+    .MuiBadge-anchorOriginTopRightRectangle {
+        top: 0px;
+        right: 0px;
+        transform: scale(1) translate(50%, -50%);
+        transform-origin: 100% 0%;
+    }
+
+    .MuiBadge-invisible {
+        transition: transform 195ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        transition-duration: 195ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-delay: 0ms;
+        transition-property: transform;
+    }
+
+    .MuiBadge-anchorOriginTopRightRectangle.MuiBadge-invisible {
+        transform: scale(0) translate(50%, -50%);
+    }
+
+    .MuiInputBase-input {
+        color: currentcolor;
+        width: 100%;
+        border: 0;
+        height: 1.1876em;
+        margin: 0;
+        display: block;
+        padding: 6px 0 7px;
+        min-width: 0px;
+        background: none;
+        box-sizing: content-box;
+        animation-name: mui-auto-fill-cancel;
+        animation-duration: 10ms;
+        border-top-width: 0px;
+        border-right-width: 0px;
+        border-bottom-width: 0px;
+        border-left-width: 0px;
+        border-top-style: initial;
+        border-right-style: initial;
+        border-bottom-style: initial;
+        border-left-style: initial;
+        border-top-color: initial;
+        border-right-color: initial;
+        border-bottom-color: initial;
+        border-left-color: initial;
+        border-image-source: initial;
+        border-image-slice: initial;
+        border-image-width: initial;
+        border-image-outset: initial;
+        border-image-repeat: initial;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        padding-top: 6px;
+        padding-right: 0px;
+        padding-bottom: 7px;
+        padding-left: 0px;
+        background-image: none;
+        background-position-x: initial;
+        background-position-y: initial;
+        background-size: initial;
+        background-repeat-x: initial;
+        background-repeat-y: initial;
+        background-attachment: initial;
+        background-origin: initial;
+        background-clip: initial;
+        background-color: initial;
+    }
+
+    .jss16 {
+        width: 100%;
+        padding: 8px 8px 8px 0px;
+        padding-left: calc(1em + 18px);
+        padding-top: 8px;
+        padding-right: 8px;
+        padding-bottom: 8px;
+    }
+
+
+    @keyframes mui-auto-fill-cancel {}
 </style>
 
-<header class="section-header">
-    <nav class="navbar navbar-light navbar-expand p-0 bg-light">
-        <div class="container-fluid">
-            <ul class="navbar-nav d-none d-md-flex mr-auto">
-                <li class="nav-item"><a class="nav-link" href="#" data-abc="true">Cash On Delivery</a></li>
-                <li class="nav-item"><a class="nav-link" href="#" data-abc="true">Free Delivery</a></li>
-                <li class="nav-item"><a class="nav-link" href="#" data-abc="true">Cash Backs</a></li>
-            </ul>
-            <ul class="navbar-nav d-flex align-items-center">
-                <li class="nav-item">
-                    <div class="d-flex flex-row"> <img src="https://i.imgur.com/EYFtR83.jpg" class="rounded-circle"
-                            width="30"> </div>
-                </li>
-                <li class="nav-item"> <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
-                        class="nav-link d-flex align-items-center" data-abc="true"><span>Login/Signup</span><i
-                            class='bx bxs-chevron-down'></i></a> </li>
-            </ul> <!-- list-inline // -->
-        </div> <!-- navbar-collapse .// -->
-        <!-- Button trigger modal -->
 
 
-        <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Login / Signup</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+
+
+
+<header class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed jss3 mui-fixed MuiPaper-elevation4 snipcss-cn28Y">
+    <div class="MuiGrid-root jss4 MuiGrid-container">
+        <div class="MuiGrid-root jss5">
+            <a class="jss6" href="/" style="margin-right: 20px;">
+                <img src="/images/logo.png" alt="app-logo" width="100rem"
+                    >
+            </a>
+            <a class="jss6 jss7" href="/shop/men">
+                Men
+            </a>
+            <a class="jss6 jss8" href="/shop/women">
+                Women
+            </a>
+            <a class="jss6 jss9" href="/shop/kids">
+                Kids
+            </a>
+        </div>
+        <div class="MuiGrid-root">
+            <span style="display: inline-flex; align-items: center; margin-right: 4px;">
+                <div class="jss17">
+                    <div class="jss18">
+                        <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                            </path>
+                        </svg>
                     </div>
-                    <div class="modal-body">
-                        <iframe src="/login/login.html" width="100%" height="500rem" title="description"></iframe>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Understood</button>
+                    <div class="MuiInputBase-root jss15">
+                        <input placeholder="Search for products, brands and more" type="text" aria-label="Search"
+                            class="MuiInputBase-input jss16" value="">
                     </div>
                 </div>
+            </span>
+        </div>
+        <div class="MuiGrid-root jss12">
+            <div class="jss14" aria-haspopup="true">
+                <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" color="#5d5b5b" aria-hidden="true">
+                    <path
+                        d="M12 5.9c1.16 0 2.1.94 2.1 2.1s-.94 2.1-2.1 2.1S9.9 9.16 9.9 8s.94-2.1 2.1-2.1m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z">
+                    </path>
+                </svg>
+                <span>
+                    profile
+                </span>
+            </div>
+            <div class="jss13">
+                <span class="MuiBadge-root">
+                    <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" color="#5d5b5b"
+                        aria-hidden="true">
+                        <path
+                            d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z">
+                        </path>
+                    </svg>
+                    <span
+                        class="MuiBadge-badge MuiBadge-anchorOriginTopRightRectangle MuiBadge-colorSecondary MuiBadge-invisible">
+                        0
+                    </span>
+                </span>
+                <span>
+                    wishlist
+                </span>
+            </div>
+            <div class="jss13">
+                <span class="MuiBadge-root">
+                    <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" color="#5d5b5b"
+                        aria-hidden="true">
+                        <path
+                            d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12zm-7-8c-1.66 0-3-1.34-3-3H7c0 2.76 2.24 5 5 5s5-2.24 5-5h-2c0 1.66-1.34 3-3 3z">
+                        </path>
+                    </svg>
+                    <span
+                        class="MuiBadge-badge MuiBadge-anchorOriginTopRightRectangle MuiBadge-colorSecondary MuiBadge-invisible">
+                        0
+                    </span>
+                </span>
+                <span>
+                    bag
+                </span>
             </div>
         </div>
-
-        <!-- container // -->
-    </nav> <!-- header-top-light.// -->
-    <section class="header-main border-bottom bg-white">
-        <div class="container-fluid">
-            <div class="row p-2 pt-3 pb-3 d-flex align-items-center">
-                <div class="col-md-2"> <img class="d-none d-md-flex" src="/images/logo.png" width="100">
-                </div>
-                <div class="col-md-8">
-                    <div class="d-flex form-inputs">
-                        <div class="input-group ">
-                            <input type="text" class="form-control" placeholder="Search For Products..."
-                                aria-label="Recipient's username" aria-describedby="button-addon2">
-                            <button class="btn btn-outline-dark" type="button" id="button-addon2">&nbsp;&nbsp; <i
-                                    class="fa-solid fa-magnifying-glass"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="d-flex d-none d-md-flex flex-row align-items-center"> <span class="shop-bag"><i
-                                class='bx bxs-shopping-bag'></i></span>
-                        <div class="d-flex flex-column ms-2"> <span class="qty">Cart</span> <span
-                                class="fw-bold">$100</span> </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid"> <a class="navbar-brand d-md-none d-md-flex" href="#">Categories</a> <button
-                class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"> <span
-                    class="navbar-toggler-icon"></span> </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-
-                    <li class="nav-item"> <a class="nav-link active uk-float-left" aria-current="page" href="#"> Men
-                            <div uk-dropdown="pos: bottom-justify; boundary: .boundary-align; boundary-align: true">
-                                <ul class="uk-nav uk-dropdown-nav">
-                                    <li class="uk-active"><a href="#">Active</a></li>
-                                    <li><a href="#">Item</a></li>
-                                    <li class="uk-nav-header">Header</li>
-                                    <li><a href="#">Item</a></li>
-                                    <li><a href="#">Item</a></li>
-                                    <li class="uk-nav-divider"></li>
-                                    <li><a href="#">Item</a></li>
-                                </ul>
-                            </div>
-                        </a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="/app/productlist">Our Products</a> </li>
-
-                    <li class="nav-item"> <a class="nav-link" href="#">Fashion</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="#">Furnitures</a> </li>
-                    <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#"
-                            id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Handicrafts </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Smart Phones</a></li>
-                            <li><a class="dropdown-item" href="#">Feature Phones</a></li>
-                            <li><a class="dropdown-item" href="#">Mobile Covers</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    </div>
 </header>
+
 
 
 

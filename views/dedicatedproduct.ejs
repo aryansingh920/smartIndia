@@ -1,470 +1,540 @@
 <%- include('./partials/header')  -%>
 <%- include('./navbar')  -%>
 
+
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+    @import url("https://fonts.googleapis.com/css?family=Poppins|Roboto");
 
-  
-
-
-
-    .card-wrapper {
-        max-width: 1100px;
-        margin: 0 auto;
+    body {
+        color: rgb(88, 89, 91);
     }
 
-
-
-    .img-display {
-        overflow: hidden;
+    .snipcss-PG3S8 {
+        color: rgb(255, 255, 255) !important;
     }
 
-    .img-showcase {
-        display: flex;
-        width: 100%;
-        transition: all 0.5s ease;
-    }
-
-    .img-showcase img {
-        min-width: 100%;
-    }
-
-    .img-select {
-        display: flex;
-    }
-
-    .img-item {
-        margin: 0.3rem;
-    }
-
-    .img-item:nth-child(1),
-    .img-item:nth-child(2),
-    .img-item:nth-child(3) {
-        margin-right: 0;
-    }
-
-    .img-item:hover {
-        opacity: 0.8;
-    }
-
-    .product-content {
-        padding: 2rem 1rem;
-    }
-
-    .product-title {
-        font-size: 3rem;
-        text-transform: capitalize;
-        font-weight: 700;
-        position: relative;
-        color: #12263a;
-        margin: 1rem 0;
-    }
-
-    .product-title::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        height: 4px;
-        width: 80px;
-        background: #12263a;
-    }
-
-    .product-link {
-        text-decoration: none;
-        text-transform: uppercase;
-        font-weight: 400;
-        font-size: 0.9rem;
-        display: inline-block;
-        margin-bottom: 0.5rem;
-        background: #256eff;
-        color: #fff;
-        padding: 0 0.3rem;
-        transition: all 0.5s ease;
-    }
-
-    .product-link:hover {
-        opacity: 0.9;
-    }
-
-    .product-rating {
-        color: #ffc107;
-    }
-
-    .product-rating span {
-        font-weight: 600;
-        color: #252525;
-    }
-
-    .product-price {
-        margin: 1rem 0;
-        font-size: 1rem;
-        font-weight: 700;
-    }
-
-    .product-price span {
-        font-weight: 400;
-    }
-
-    .last-price span {
-        color: #f64749;
-        text-decoration: line-through;
-    }
-
-    .new-price span {
-        color: #256eff;
-    }
-
-    .product-detail h2 {
-        text-transform: capitalize;
-        color: #12263a;
-        padding-bottom: 0.6rem;
-    }
-
-    .product-detail p {
-        font-size: 0.9rem;
-        padding: 0.3rem;
-        opacity: 0.8;
-    }
-
-    .product-detail ul {
-        margin: 1rem 0;
-        font-size: 0.9rem;
-    }
-
-    .product-detail ul li {
+    body {
         margin: 0;
-        list-style: none;
-        background: url(shoes_images/checked.png) left center no-repeat;
-        background-size: 18px;
-        padding-left: 1.7rem;
-        margin: 0.4rem 0;
-        font-weight: 600;
-        opacity: 0.9;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
     }
 
-    .product-detail ul li span {
+    .jss1 {
+        padding: 20px 28px;
+        padding-top: 20px;
+        padding-right: 28px;
+        padding-bottom: 20px;
+        padding-left: 28px;
+    }
+
+    .MuiGrid-container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+    }
+
+    .jss4 {
+        border-bottom: 1px solid #d4d5d9;
+        margin-bottom: 12px;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: rgb(212, 213, 217);
+    }
+
+    .jss10 {
+        margin-bottom: 15px;
+    }
+
+    .jss23 {
+        color: rgb(255, 62, 108);
+        width: fit-content;
+        border: 1px solid #ff3f6c;
+        margin: 10px 10px 10px 0px;
+        padding: 14px 16px;
+        font-weight: 500;
+        border-radius: 20px;
+        border-top-width: 1px;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+        border-top-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        border-top-color: rgb(255, 63, 108);
+        border-right-color: rgb(255, 63, 108);
+        border-bottom-color: rgb(255, 63, 108);
+        border-left-color: rgb(255, 63, 108);
+        border-image-source: initial;
+        border-image-slice: initial;
+        border-image-width: initial;
+        border-image-outset: initial;
+        border-image-repeat: initial;
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        margin-left: 0px;
+        padding-top: 14px;
+        padding-right: 16px;
+        padding-bottom: 14px;
+        padding-left: 16px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+
+    .jss25 {
+        padding: 10px 0px;
+        border-top: 1px solid #d4d5d9;
+        margin-top: 20px;
+        padding-top: 10px;
+        padding-right: 0px;
+        padding-bottom: 10px;
+        padding-left: 0px;
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-top-color: rgb(212, 213, 217);
+    }
+
+    .MuiGrid-item {
+        margin: 0;
+        box-sizing: border-box;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+    }
+
+    .MuiGrid-grid-xs-12 {
+        flex-grow: 0;
+        max-width: 100%;
+        flex-basis: 100%;
+    }
+
+    @media (min-width: 600px) {
+        .MuiGrid-grid-sm-6 {
+            flex-grow: 0;
+            max-width: 50%;
+            flex-basis: 50%;
+        }
+    }
+
+    @media (min-width: 960px) {
+        .MuiGrid-grid-md-6 {
+            flex-grow: 0;
+            max-width: 50%;
+            flex-basis: 50%;
+        }
+    }
+
+    @media (min-width: 1280px) {
+        .MuiGrid-grid-lg-6 {
+            flex-grow: 0;
+            max-width: 50%;
+            flex-basis: 50%;
+        }
+    }
+
+    .jss5 {
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    .jss6 {
+        color: rgb(83, 86, 101);
+        font-size: 20px;
         font-weight: 400;
     }
 
-    .purchase-info {
-        margin: 1.5rem 0;
+    .jss11 {
+        color: rgb(40, 44, 63);
+        font-size: 24px;
+        font-weight: 500;
+        margin-right: 12px;
     }
 
-    .purchase-info input,
-    .purchase-info .btn {
-        border: 1.5px solid #ddd;
-        border-radius: 25px;
-        text-align: center;
-        padding: 0.45rem 0.8rem;
+    .jss12 {
+        color: rgb(105, 110, 121);
+        opacity: 0.8;
+        font-size: 20px;
+        margin-right: 12px;
+    }
+
+    .MuiButtonBase-root {
+        border: 0;
+        cursor: pointer;
+        margin: 0;
+        display: inline-flex;
         outline: 0;
-        margin-right: 0.2rem;
-        margin-bottom: 1rem;
-    }
-
-    .purchase-info input {
-        width: 60px;
-    }
-
-    .purchase-info .btn {
-        cursor: pointer;
-        color: #fff;
-    }
-
-    .purchase-info .btn:first-of-type {
-        background: #256eff;
-    }
-
-    .purchase-info .btn:last-of-type {
-        background: #006400;
-    }
-
-    .purchase-info .btn:hover {
-        opacity: 0.9;
-    }
-
-    .social-links {
-        display: flex;
+        padding: 0;
+        position: relative;
         align-items: center;
-    }
-
-    .social-links a {
-        display: flex;
-        align-items: center;
+        user-select: none;
+        border-radius: 0;
+        vertical-align: middle;
         justify-content: center;
-        width: 32px;
-        height: 32px;
-        color: #000;
-        border: 1px solid #000;
-        margin: 0 0.2rem;
-        border-radius: 50%;
         text-decoration: none;
-        font-size: 0.8rem;
-        transition: all 0.5s ease;
+        background-color: transparent;
+        border-top-width: 0px;
+        border-right-width: 0px;
+        border-bottom-width: 0px;
+        border-left-width: 0px;
+        border-top-style: initial;
+        border-right-style: initial;
+        border-bottom-style: initial;
+        border-left-style: initial;
+        border-top-color: initial;
+        border-right-color: initial;
+        border-bottom-color: initial;
+        border-left-color: initial;
+        border-image-source: initial;
+        border-image-slice: initial;
+        border-image-width: initial;
+        border-image-outset: initial;
+        border-image-repeat: initial;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        outline-color: initial;
+        outline-style: initial;
+        outline-width: 0px;
+        padding-top: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+        padding-left: 0px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        text-decoration-line: none;
+        text-decoration-thickness: initial;
+        text-decoration-style: initial;
+        text-decoration-color: initial;
+        appearance: none;
     }
 
-    .social-links a:hover {
-        background: #000;
-        border-color: transparent;
-        color: #fff;
+    .MuiButton-root {
+        color: rgba(0, 0, 0, 0.87);
+        padding: 6px 16px;
+        font-size: 0.875rem;
+        min-width: 64px;
+        box-sizing: border-box;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        font-family: Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 500;
+        line-height: 1.75;
+        border-radius: 4px;
+        letter-spacing: 0.02857em;
+        text-transform: uppercase;
+        padding-top: 6px;
+        padding-right: 16px;
+        padding-bottom: 6px;
+        padding-left: 16px;
+        transition-duration: 250ms, 250ms, 250ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1), cubic-bezier(0.4, 0, 0.2, 1), cubic-bezier(0.4, 0, 0.2, 1);
+        transition-delay: 0ms, 0ms, 0ms;
+        transition-property: background-color, box-shadow, border;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px;
     }
 
-    @media screen and (min-width: 992px) {
-        .card {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 1.5rem;
-        }
-
-        .card-wrapper {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .product-imgs {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .product-content {
-            padding-top: 0;
-        }
+    .MuiButton-outlined {
+        border: 1px solid rgba(0, 0, 0, 0.23);
+        padding: 5px 15px;
+        border-top-width: 1px;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+        border-top-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        border-top-color: rgba(0, 0, 0, 0.23);
+        border-right-color: rgba(0, 0, 0, 0.23);
+        border-bottom-color: rgba(0, 0, 0, 0.23);
+        border-left-color: rgba(0, 0, 0, 0.23);
+        border-image-source: initial;
+        border-image-slice: initial;
+        border-image-width: initial;
+        border-image-outset: initial;
+        border-image-repeat: initial;
+        padding-top: 5px;
+        padding-right: 15px;
+        padding-bottom: 5px;
+        padding-left: 15px;
     }
 
-    .product-price {
-        color: rgb(50, 205, 50);
+    .jss47 {
+        color: rgb(255, 255, 255);
+        padding: 12px;
+        font-weight: 600;
+        border-color: #ff3e6c;
+        margin-right: 20px;
+        background-color: rgb(255, 62, 108);
+        padding-top: 12px;
+        padding-right: 12px;
+        padding-bottom: 12px;
+        padding-left: 12px;
+        border-top-color: rgb(255, 62, 108);
+        border-right-color: rgb(255, 62, 108);
+        border-bottom-color: rgb(255, 62, 108);
+        border-left-color: rgb(255, 62, 108);
     }
 
-    .product-detail {
-        margin-top: 30px;
+    .MuiButton-root:hover {
+        text-decoration: none;
+        background-color: rgba(0, 0, 0, 0.04);
+        text-decoration-line: none;
+        text-decoration-thickness: initial;
+        text-decoration-style: initial;
+        text-decoration-color: initial;
     }
 
-    .favorites-click {
-        color: red;
-        background-color: pink;
-        padding: 10px;
+    .jss47:hover {
+        background-color: rgb(236, 94, 128);
     }
 
-    .add-wishlist-btn:hover {
-        background-color: #356fac;
+    .MuiButton-text {
+        padding: 6px 8px;
+        padding-top: 6px;
+        padding-right: 8px;
+        padding-bottom: 6px;
+        padding-left: 8px;
     }
 
-    .add-wishlist-btn {
-        font-family: "Sentinel A", "Sentinel B", Georgia, serif;
-        text-shadow: 0 1px 1px rgb(0 0 0 / 40%);
-        background: #6A983C;
-        color: #FFF;
-        padding: 6px 20px 7px;
+    .jss48 {
+        border: 1px solid #d4d5d9;
+        padding: 12px 30px;
+        font-weight: 600;
+        border-top-width: 1px;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+        border-top-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        border-top-color: rgb(212, 213, 217);
+        border-right-color: rgb(212, 213, 217);
+        border-bottom-color: rgb(212, 213, 217);
+        border-left-color: rgb(212, 213, 217);
+        border-image-source: initial;
+        border-image-slice: initial;
+        border-image-width: initial;
+        border-image-outset: initial;
+        border-image-repeat: initial;
+        padding-top: 12px;
+        padding-right: 30px;
+        padding-bottom: 12px;
+        padding-left: 30px;
+    }
+
+    .jss27 {
+        margin-top: 15px;
+    }
+
+    .jss2 {
+        border: 1px solid #f5f5f6;
+        height: 400px;
+        overflow: hidden;
+        max-height: 400px;
+        min-height: 400px;
+        border-top-width: 1px;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+        border-top-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        border-top-color: rgb(245, 245, 246);
+        border-right-color: rgb(245, 245, 246);
+        border-bottom-color: rgb(245, 245, 246);
+        border-left-color: rgb(245, 245, 246);
+        border-image-source: initial;
+        border-image-slice: initial;
+        border-image-width: initial;
+        border-image-outset: initial;
+        border-image-repeat: initial;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+    .jss14 {
+        color: rgb(3, 166, 133);
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .MuiButton-label {
+        width: 100%;
+    }
+
+    .MuiTouchRipple-root {
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        z-index: 0;
+        overflow: hidden;
+        position: absolute;
+        pointer-events: none;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+    .jss3 {
+        width: 100%;
+        cursor: zoom-in;
+        height: 100%;
+        transition: transform .2s;
+        transition-duration: 0.2s;
+        transition-timing-function: ease;
+        transition-delay: 0s;
+        transition-property: transform;
+    }
+
+    .MuiButton-startIcon {
+        margin-left: -4px;
+        margin-right: 8px;
+    }
+
+    .jss28 {
         font-size: 18px;
-        line-height: 23px;
-        min-width: 50px;
-        text-align: center;
-        text-decoration: none;
-        vertical-align: middle;
-        border: 1px solid 4383c5;
-        cursor: pointer;
-        font-weight: 600px;
-        transition: opacity 0.1s ease-out, background 0.1s ease-out;
-        -webkit-border-radius: 2px;
-        -webkit-box-shadow: inset 0 1px 0 rgb(255 255 255 / 30%), 0 1px 3px rgb(0 0 0 / 40%);
-        box-shadow: inset 0 1px 0 rgb(255 255 255 / 30%), 0 1px 3px rgb(0 0 0 / 40%);
-        -webkit-transition: opacity 0.1s ease-out, background 0.1s ease-out;
+        font-weight: 500;
+        margin-right: 18px;
+        text-transform: uppercase;
     }
 
-    .product-price {
-        color: #6A983C;
-        font-size: 26px;
-        margin-right: 10px;
-    }
-
-    .add-wishlist-btn {
-        margin-left: 10px;
-    }
-
-    .color-choose {
-        margin-top: 20px;
-    }
-
-    .color-choose div {
+    .MuiSvgIcon-root {
+        fill: currentcolor;
+        width: 1em;
+        height: 1em;
         display: inline-block;
+        font-size: 1.5rem;
+        transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        flex-shrink: 0;
+        user-select: none;
+        transition-duration: 200ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-delay: 0ms;
+        transition-property: fill;
     }
 
-    .color-choose input[type="radio"] {
-        display: none;
+    .MuiSvgIcon-fontSizeSmall {
+        font-size: 1.25rem;
     }
 
-    .color-choose input[type="radio"]+label span {
-        display: inline-block;
-        width: 40px;
-        height: 40px;
-        margin: -1px 4px 0 0;
-        vertical-align: middle;
-        cursor: pointer;
-        border-radius: 50%;
-    }
-
-    .color-choose input[type="radio"]+label span {
-        border: 2px solid #FFFFFF;
-        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
-    }
-
-    .color-choose input[type="radio"]#red+label span {
-        background-color: #C91524;
-    }
-
-    .color-choose input[type="radio"]#blue+label span {
-        background-color: #314780;
-    }
-
-    .color-choose input[type="radio"]#black+label span {
-        background-color: #323232;
-    }
-
-    .color-choose input[type="radio"]:checked+label span {
-        background-image: url(images/check-icn.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    .active {
-        opacity: 1;
+    .MuiButton-iconSizeMedium> :first-child {
+        font-size: 20px;
     }
 </style>
 
 
-<body>
 
-    <div class="card-wrapper">
-        <div class="card">
-            <!-- card left -->
-            <div class="product-imgs">
-                <div class="img-display">
-                    <div class="img-showcase left-column">
-                        <img src="images/black.png" class="active" alt="shoe image">
-                        <img src="images/blue.png" alt="shoe image">
-                        <img src="images/red.png" alt="shoe image">
-                    </div>
-                </div>
-                <div class="img-select">
-                    <div class="img-item">
-                        <a href="#" data-id="1">
-                            <img src="images/blue.png" alt="shoe image">
-                        </a>
-                    </div>
-                    <div class="img-item">
-                        <a href="#" data-id="2">
-                            <img src="images/red.png" alt="shoe image">
-                        </a>
-                    </div>
-                    <div class="img-item">
-                        <a href="#" data-id="3">
-                            <img src="images/blue.png" alt="shoe image">
-                        </a>
-                    </div>
-                    <div class="img-item">
-                        <a href="#" data-id="4">
-                            <img src="images/red.png" alt="shoe image">
-                        </a>
+<body>
+    <div class="MuiBox-root jss45 jss1 snipcss-PG3S8">
+        <div style="display: flex; padding: 8px 18px 0px 1px;">
+            <div style="width: 60%;">
+                <div class="MuiGrid-root MuiGrid-container">
+                    <div
+                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-6 MuiGrid-grid-xl-6">
+                        <div class="jss2">
+                            <img class="jss3" src="https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg"
+                                alt="product_img">
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- card right -->
-            <div class="product-content">
-                <h2 class="product-title">Sung Jin Woo</h2>
-                <div class="product-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                    <span>4.7(21)</span>
-                </div>
-
-                <div class="product-detail">
-                    <h2>about this item: </h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eveniet veniam tempora fuga tenetur
-                        placeat sapiente architecto illum soluta consequuntur, aspernatur quidem at sequi ipsa!</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, perferendis eius.
-                        Dignissimos, labore suscipit. Unde.</p>
-                </div>
-
-                <!--div class = "product-detail">
-            <h2>about this item: </h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eveniet veniam tempora fuga tenetur placeat sapiente architecto illum soluta consequuntur, aspernatur quidem at sequi ipsa!</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, perferendis eius. Dignissimos, labore suscipit. Unde.</p>
-            <ul>
-              <li>Color: <span>Black</span></li>
-              <li>Available: <span>in stock</span></li>
-              <li>Category: <span>Shoes</span></li>
-              <li>Shipping Area: <span>All over the world</span></li>
-              <li>Shipping Fee: <span>Free</span></li>
-            </ul>
-          -->
-
-                <div class="color-choose">
-                    <div>
-                        <input data-image="red" type="radio" id="red" name="color" value="red" checked>
-                        <label for="red"><span></span></label>
+            <div style="width: 40%; padding-left: 20px;">
+                <div class="jss4">
+                    <div class="jss5">
+                        shineMore
                     </div>
-                    <div>
-                        <input data-image="blue" type="radio" id="blue" name="color" value="blue">
-                        <label for="blue"><span></span></label>
-                    </div>
-                    <div>
-                        <input data-image="black" type="radio" id="black" name="color" value="black">
-                        <label for="black"><span></span></label>
+                    <div class="jss6">
+                        lightweight hood
                     </div>
                 </div>
-
-
-                <div class="purchase-info">
-                    <span class="product-price">35.80 USD</span>
-                    <input type="number" min="0" value="1">
-                    <a href="#" class="add-wishlist-btn"><span>+ Add to Cart</span></a>
-                    <!-- button type = "button" class = "btn">Compare</!-->
+                <div class="jss10">
+                    <span class="jss11">
+                        Rs. 999
+                    </span>
+                    <strike class="jss12">
+                        Rs. 1400
+                    </strike>
+                    <div>
+                        <span class="jss14">
+                            inclusive of all taxes
+                        </span>
+                    </div>
                 </div>
-
+                <div class="jss23">
+                    Onesize
+                </div>
+                <div class="jss24">
+                    <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined jss47" tabindex="0"
+                        type="button" style="padding-left: 45px; padding-right: 45px;">
+                        <span class="MuiButton-label">
+                            <span class="MuiButton-startIcon MuiButton-iconSizeMedium">
+                                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall" focusable="false"
+                                    viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-1.99.9-1.99 2L3 20c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm0 10c-2.76 0-5-2.24-5-5h2c0 1.66 1.34 3 3 3s3-1.34 3-3h2c0 2.76-2.24 5-5 5z">
+                                    </path>
+                                </svg>
+                            </span>
+                            add to bag
+                        </span>
+                        <span class="MuiTouchRipple-root">
+                        </span>
+                    </button>
+                    <button class="MuiButtonBase-root MuiButton-root MuiButton-text jss48" tabindex="0" type="button">
+                        <span class="MuiButton-label">
+                            <span class="MuiButton-startIcon MuiButton-iconSizeMedium">
+                                <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z">
+                                    </path>
+                                </svg>
+                            </span>
+                            wishlist
+                        </span>
+                        <span class="MuiTouchRipple-root">
+                        </span>
+                    </button>
+                </div>
+                <div class="jss25">
+                    <div class="jss27">
+                        <div style="display: flex; align-items: center;">
+                            <span class="jss28">
+                                Product Details
+                            </span>
+                            <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M3 18h12v-2H3v2zM3 6v2h18V6H3zm0 7h18v-2H3v2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <p style="font-size: 16px;">
+                            Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring
+                            waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat
+                            has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the
+                            hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable
+                            Drawstrings give it a real styled look.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-
-    <script>
-        const imgs = document.querySelectorAll('.img-select a');
-        const imgBtns = [...imgs];
-        let imgId = 1;
-
-        imgBtns.forEach((imgItem) => {
-            imgItem.addEventListener('click', (event) => {
-                event.preventDefault();
-                imgId = imgItem.dataset.id;
-                slideImage();
-            });
-        });
-
-        function slideImage() {
-            const displayWidth = document.querySelector('.img-showcase img:first-child').clientWidth;
-
-            document.querySelector('.img-showcase').style.transform = `translateX(${- (imgId - 1) * displayWidth}px)`;
-        }
-
-        window.addEventListener('resize', slideImage);
-
-        $(document).ready(function () {
-
-            $('.color-choose input').on('click', function () {
-                var headphonesColor = $(this).attr('data-image');
-
-                $('.active').removeClass('active');
-                $('.left-column img[data-image = ' + headphonesColor + ']').addClass('active');
-                $(this).addClass('active');
-            });
-
-        });
-    </script>
 </body>
 
 <%- include('./partials/footer')  -%>
