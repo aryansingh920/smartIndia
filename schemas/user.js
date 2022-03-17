@@ -10,6 +10,8 @@ const userSchema = new mongoose.Schema({
     avatar_url: String,
     name: String,
     phone: String,
+    cart:[]
 });
 
 const userModel = new mongoose.model("userModel", userSchema);
+module.exports = userModel;

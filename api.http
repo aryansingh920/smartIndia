@@ -1,0 +1,9 @@
+POST http://localhost:3000/app/addProduct
+Content-Type: application/json
+
+{
+    "name":"Wooden Art",
+    "description":"The northern states of India have a rich tradition of the woodwork. Regions in Punjab are famous for its exquisite wooden furniture. Kashmir is famous for its artefacts made from the walnut trees. The artisans of Chhattisgarh specialise in wooden crafts like masks, doors, window frames and sculptures.",
+    "image":"https://www.holidify.com/images/cmsuploads/compressed/woodpatternfoodcraftfurnitureart1352821pxhere.com_20201104123515.jpg",
+    "price":"599"
+}
