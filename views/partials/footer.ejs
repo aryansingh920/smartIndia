@@ -1,13 +1,15 @@
-<%- include ('../languageTranslator') -%> 
+<%- include ('../languageTranslator') -%>
 <style>
-    a{
+    a {
         text-decoration: none;
         border: none;
     }
-    a:hover{
+
+    a:hover {
         text-decoration: none;
         border: none;
     }
+
     ul {
         margin: 0px;
         padding: 0px;
@@ -202,6 +204,27 @@
     }
 </style>
 <br>
+<!-- <div class="fixed-bottom" style="position: fixed; bottom: 0px;  z-index: 10000;">
+    <!-- Button trigger modal -->
+
+</div> -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Chat with us</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div style="overflow-y:hidden;overflow-x:hidden" class="modal-body">
+                <iframe style="overflow-y:hidden;overflow-x:hidden" height="350px"  src="https://aryansingh920.github.io/chatApp/" frameborder="0"></iframe>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 <footer class="footer-section">
     <div class="container">
         <div class="footer-cta pt-5 pb-5">
@@ -240,8 +263,7 @@
                 <div class="col-xl-4 col-lg-4 mb-50">
                     <div class="footer-widget">
                         <div class="footer-logo">
-                            <a href="/"><img src="/images/logo.png" class="img-fluid"
-                                    alt="logo"></a>
+                            <a href="/"><img src="/images/logo.png" class="img-fluid" alt="logo"></a>
                         </div>
                         <div class="footer-text">
                             <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor
@@ -272,6 +294,10 @@
                             <li><a href="#">Expert Team</a></li>
                             <li><a href="#">Contact us</a></li>
                             <li><a href="#">Latest News</a></li>
+                            <li><button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">
+                                    Chat with us
+                                </button></li>
                         </ul>
                     </div>
                 </div>
