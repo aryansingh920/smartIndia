@@ -1,4 +1,4 @@
-POST http://localhost:3000/app/addProduct
+POST https://shilpkar.herokuapp.com/app/addProduct
 Content-Type: application/json
 
 {
